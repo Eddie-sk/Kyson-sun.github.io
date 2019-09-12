@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>织语 iOS Hybird 框架 | Kyson&#39;s blog</title>
+  <title>hexo使用小技能 | Kyson&#39;s blog</title>
   
   
 
@@ -141,7 +141,7 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="Search" />
+						<input type="text" class="input u-search-input" placeholder="搜索" />
 						<i class="icon fas fa-search fa-fw"></i>
 					</form>
 				</div>
@@ -180,6 +180,39 @@
 							</a>
             </li>
           
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tags/"
+                
+                  rel="nofollow"
+                
+                
+                id="tags">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+							</a>
+            </li>
+          
        
       </ul>
 		</nav>
@@ -207,8 +240,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/09/11/ccwork iOS Hybird框架/">
-        织语 iOS Hybird 框架
+      <a href="/2018/03/12/hexo使用小技能/">
+        hexo使用小技能
       </a>
     </h1>
   
@@ -239,7 +272,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2019-09-11</p>
+    <p>2018-03-12</p>
   </a>
 </div>
 
@@ -283,18 +316,17 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        <p>data: 2018-3-20<br>tags: [Hybird]</p>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hybird 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。</p>
-<h2 id="Hybird-App-框架"><a href="#Hybird-App-框架" class="headerlink" title="Hybird App 框架"></a>Hybird App 框架</h2><p>一个完整的 Hybrid APP 框架主要包括 Manager、WebView 、Bridge、Cache 等模块。整个框架设计理念是组合，而不是继承，因此框架设计的不是一个 XXWebView / XXWebViewController 基类，使用者不需要在业务代码中继承 WebView 。框架设计的是一个 Manager 对象，使用者只需要跟自己业务中的任意一种 WebView 进行绑定，就可以拥有 Hybrid 的能力。</p>
-<ul>
-<li>Manager 作为核心， 负责处理 Hybird 业务，校验和注册API</li>
-<li>WebView 作为容器，负责展示前端页面，响应前端交互</li>
-<li>Bridge 作为桥梁，负责 Native 和 JS 之间通信交互</li>
-<li>Cache 作为缓存，负责缓存资源文件等</li>
-</ul>
-<p>框架结构如下：</p>
-<p><img src="/img/Hybirdframe.png" alt></p>
+        <h2 id="插入本地图片"><a href="#插入本地图片" class="headerlink" title="插入本地图片"></a>插入本地图片</h2><p>Hexo 插入本地图片的路径让人十分头疼，因为生成 public 的 html 时，每一篇都是在年月日做文件夹目录的文件下，例如</p>
+<pre><code>/blog/public/2018/03/12/Hexo使用小技巧</code></pre><p>而主页的 html 文件又不在这个文件下，与博文的目录不同</p>
+<pre><code>/blog/public</code></pre><p>这与在 _posts 目录下边写博客的 md 文件目录完全不同。</p>
+<p>而 hexo 官方文档为我们提供了一种插入图片的方法，但是这与我们平常编写 Markdown 文件的语法差别很大。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% asset_path slug %&#125;</span><br><span class="line">&#123;% asset_img slug [title] %&#125;</span><br><span class="line">&#123;% asset_link slug [title] %&#125;</span><br></pre></td></tr></table></figure>
 
+<p>那么 Hexo 有没有能像 Markdown 的语法一样插入本地图片呢，Hexo 为我们提供了一个插件，如下。</p>
+<h3 id="Hexo-配置文件"><a href="#Hexo-配置文件" class="headerlink" title="Hexo 配置文件"></a>Hexo 配置文件</h3><p>在设置文件中加入选项配置：</p>
+<pre><code>post_asset_folder: true</code></pre><p>这个配置实际上是在我们生成文件 ( hexo new )<br>的时候，会在 /source/_posts 文件夹下创建一个文件名相同的文件夹，可以在此文件夹下放入图片，或者附件。</p>
+<h3 id="安装-hexo-asset-image-插件"><a href="#安装-hexo-asset-image-插件" class="headerlink" title="安装 hexo-asset-image 插件"></a>安装 hexo-asset-image 插件</h3><pre><code>npm install https://github.com/CodeFalling/hexo-asset-image --save</code></pre><p>插件安装完成后，实际上是存放在下面这个文件夹中</p>
+<pre><code>/node_modules/hexo-asset-image</code></pre>
       </div>
       
         <br>
@@ -305,10 +337,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-12T11:44:20+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-12T14:49:35+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Sep 12, 2019</p>
+    <p>更新于 Sep 12, 2019</p>
   </a>
 </div>
 
@@ -316,6 +348,9 @@
       
         
           
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/hexo使用/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>hexo使用</p></a></div>
+
 
         
       
@@ -329,6 +364,25 @@
 
 
       
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;上一页</h6>
+                          <h4>
+                              <a href="/2018/03/20/ccwork iOS Hybird框架/" rel="prev" title="织语 iOS Hybird 框架">
+                                
+                                    织语 iOS Hybird 框架
+                                
+                              </a>
+                          </h4>
+                          
+                      </span>
+                  </section>
+              
+              
+          </div>
       
     </section>
   </article>
@@ -352,7 +406,7 @@
 
   <script>
     window.subData = {
-      title: '织语 iOS Hybird 框架',
+      title: 'hexo使用小技能',
       tools: true
     }
   </script>
@@ -408,14 +462,14 @@
   <section class='widget toc-wrapper'>
     
 <header class='pure'>
-  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
   
     <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
   
 </header>
 
     <div class='content pure'>
-      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hybird-App-框架"><span class="toc-text">Hybird App 框架</span></a></li></ol>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#插入本地图片"><span class="toc-text">插入本地图片</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Hexo-配置文件"><span class="toc-text">Hexo 配置文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-hexo-asset-image-插件"><span class="toc-text">安装 hexo-asset-image 插件</span></a></li></ol></li></ol>
     </div>
   </section>
 
@@ -463,6 +517,18 @@
           近期文章
         </a></li>
       
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
     </ul>
   </div>
 </section>
@@ -491,6 +557,31 @@
           
             
               
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hybird/" href="/categories/Hybird/"><div class='name'>Hybird</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
 
             
           
@@ -516,6 +607,27 @@
           
             
               
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/hexo使用/" style="font-size: 14px; color: #999">hexo使用</a>
+    </div>
+  </section>
+
 
             
           
@@ -564,19 +676,19 @@
   
   
   <br>
-  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
 </div>
   <div>
-    Use
+    本站使用
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Hexo</a>
-    as theme
+    作为主题
     
-      , 
-      total visits
+      ，
+      总访问量为
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      times
+      次
     
-    . 
+    。
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
@@ -682,15 +794,15 @@
 <!-- 复制 -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  let COPY_SUCCESS = "Copied";
-  let COPY_FAILURE = "Copy failed";
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
   /*页面载入完成后，创建复制按钮*/
   !function (e, t, a) {
     /* code */
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {

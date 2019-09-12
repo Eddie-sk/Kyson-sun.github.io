@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>织语 iOS Hybird 框架 | Kyson&#39;s blog</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Kyson's blog</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Kyson's blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tags/"
+                
+                  rel="nofollow"
+                
+                
+                id="tags">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2018/03/20/ccwork iOS Hybird框架/">
+        织语 iOS Hybird 框架
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://yoursite.com" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Kyson</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2018-03-20</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  
+  <div class='new-meta-item category'>
+    <a href='/categories/Hybird/' rel="nofollow">
+      <i class="fas fa-folder-open" aria-hidden="true"></i>
+      <p>Hybird</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hybird 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。</p>
+<h2 id="Hybird-App-框架"><a href="#Hybird-App-框架" class="headerlink" title="Hybird App 框架"></a>Hybird App 框架</h2><p>一个完整的 Hybrid APP 框架主要包括 Manager、WebView 、Bridge、Cache 等模块。整个框架设计理念是组合，而不是继承，因此框架设计的不是一个 XXWebView / XXWebViewController 基类，使用者不需要在业务代码中继承 WebView 。框架设计的是一个 Manager 对象，使用者只需要跟自己业务中的任意一种 WebView 进行绑定，就可以拥有 Hybrid 的能力。</p>
+<ul>
+<li>Manager 作为核心， 负责处理 Hybird 业务，校验和注册API</li>
+<li>WebView 作为容器，负责展示前端页面，响应前端交互</li>
+<li>Bridge 作为桥梁，负责 Native 和 JS 之间通信交互</li>
+<li>Cache 作为缓存，负责缓存资源文件等</li>
+</ul>
+<h2 id="WebView-容器"><a href="#WebView-容器" class="headerlink" title="WebView 容器"></a>WebView 容器</h2><p>iOS8 以后苹果推出了一套新的 WKWebView，对于 UIWebView 和 WKWebView 的区别，可以参考 <a href="https://mp.weixin.qq.com/s?__biz=MzI1MTE2NTE1Ng==&mid=2649516616&idx=1&sn=c16a7fc0ddaee2a6d5e1ad10373af9e3&chksm=f1efeac3c69863d5942da9ba250c39e29af97a7c1ac22fce49d65dc3967c49c811b0f566b2c6#rd" target="_blank" rel="noopener">教你使用 WKWebView 的正确姿势</a>，本框架暂时使用 WKWebView 作为容器，针对 WKWebView 的区别，本框架做了一下解决方案：</p>
+<h3 id="Cookie-问题"><a href="#Cookie-问题" class="headerlink" title="Cookie 问题"></a>Cookie 问题</h3><p>前端抛弃对 Cookie 的依赖，改为使用 H5 的 Storage 能力。另 Native 提供存读接口，以备前端使用存储功能。</p>
+<h3 id="NSURLProtocol-支持"><a href="#NSURLProtocol-支持" class="headerlink" title="NSURLProtocol 支持"></a>NSURLProtocol 支持</h3><p>WKWebView 包含一个 browsingContextController 属性对象，该对象提供了 registerSchemeForCustomProtocol 和 unregisterSchemeForCustomProtocol 两个方法，能通过注册 scheme 来代理同类请求，符合注册 scheme 类型的请求会走 NSURLProtocol 协议。但是这种方案存在两个严重缺陷：post 请求 body 数据被清空；对 ATS 支持不足。</p>
+<h3 id="跨域访问"><a href="#跨域访问" class="headerlink" title="跨域访问"></a>跨域访问</h3><p>iOS9 以后，可以通过 KVC 设置 WKPreferences 的 allowFileAccessFromFileURLs 和 allowUniversalAccessFromFileURLs 属性，来打开跨域访问。但是 iOS8 暂不支持。</p>
+<h3 id="跨域白屏的问题"><a href="#跨域白屏的问题" class="headerlink" title="跨域白屏的问题"></a>跨域白屏的问题</h3><p>在 WKWebView 白屏的时候，webView.title 会被置空，因此，可以在 viewWillAppear 的时候检测 webView.title 是否为空来 reload 页面。</p>
+<h3 id="缓存问题"><a href="#缓存问题" class="headerlink" title="缓存问题"></a>缓存问题</h3><p>针对单个资源文件，可以对该资源地址加时间戳避开缓存。针对全局资源文件，需要手动清理缓存，iOS9 以后，系统提供了缓存管理接口 WKWebsiteDataStore。而 iOS8，只能通过手动删除文件来解决了，WKWebView 的缓存数据会存储在 ~/Library/Caches/BundleID/WebKit/ 目录下，可通过删除该目录来实现清理缓存。</p>
+<h2 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h2><p>由于容器选择是 WKWebView，所以 JS 调用 Native 端有两种方式 URL拦截 和 messageHandler 。本框架采用 messageHandler + evaluatingJavaScript 的方式进行通信交互。</p>
+<h3 id="JS-gt-Native-交互"><a href="#JS-gt-Native-交互" class="headerlink" title="JS -&gt; Native 交互"></a>JS -&gt; Native 交互</h3><h4 id="Native-注入"><a href="#Native-注入" class="headerlink" title="Native 注入"></a>Native 注入</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//配置对象注入</span><br><span class="line">[self.webView.configuration.userContentController addScriptMessageHandler:self name:@&quot;nativeObject&quot;];</span><br><span class="line">//移除对象注入</span><br><span class="line">[self.webView.configuration.userContentController removeScriptMessageHandlerForName:@&quot;nativeObject&quot;];</span><br></pre></td></tr></table></figure>
+
+<h4 id="JS-调用"><a href="#JS-调用" class="headerlink" title="JS 调用"></a>JS 调用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//准备要传给native的数据，包括指令，数据，回调等</span><br><span class="line">var data = &#123;</span><br><span class="line">    action:&apos;xxxx&apos;,</span><br><span class="line">    params:&apos;xxxx&apos;,</span><br><span class="line">    callback:&apos;xxxx&apos;,</span><br><span class="line">&#125;;</span><br><span class="line">//传递给客户端</span><br><span class="line">window.webkit.messageHandlers.nativeObject.postMessage(data);</span><br></pre></td></tr></table></figure>
+
+<h4 id="Native-接收"><a href="#Native-接收" class="headerlink" title="Native 接收"></a>Native 接收</h4><p>当 JS 开始调用后，会调用到指定的 WKScriptMessageHandler 代理对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">-(void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message &#123;</span><br><span class="line">    //1 取出 name 是否与注入 name 匹配</span><br><span class="line">    if (message.name isEqualToString:@&quot;nativeObject&quot;) &#123;</span><br><span class="line">        //2 取出对象，做后续操作</span><br><span class="line">        NSDictionary *msgBody = message.body;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Native-gt-JS"><a href="#Native-gt-JS" class="headerlink" title="Native -&gt; JS"></a>Native -&gt; JS</h3><p>对于 WKWebView ，除了evaluatingJavaScript，还有 WKUserScript 这个方式可以执行 JS 代码，他们之间是有区别的</p>
+<ul>
+<li>evaluatingJavaScript 是在客户端执行这条代码的时候立刻去执行当条JS代码</li>
+<li>WKUserScript 是预先准备好JS代码，当 WKWebView 加载 Dom 的时候，执行当条 JS 代码</li>
+</ul>
+<p>很明显这个虽然是一种通信方式，但并不能随时随地进行通信，并不适合选则作为设计 Bridge 的核心方案。</p>
+<h3 id="注入时机"><a href="#注入时机" class="headerlink" title="注入时机"></a>注入时机</h3><p>并不是所有前端页面都需要用到 Native 能力，因此在需要用到 Native 能力的页面，才注入 JS 代码，为其提供 Native 能力。如果需要，使用假跳转至一个指定的 URL, 然后客户端在代理方法 webView:(WKWebView *)webViewdecidePolicyForNavigationAction:decisionHandler: 里判断 URL 是否为指定的 URL，如果是，则执行注入。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler &#123;</span><br><span class="line">    NSURL *url = navigationAction.request.URL;</span><br><span class="line">    if ([url.absoluteString isEqualToString:@&quot;指定URL&quot;]) &#123;</span><br><span class="line">        // 执行注入 JS 代码</span><br><span class="line">        </span><br><span class="line">        decisionHandler(WKNavigationActionPolicyCancel);</span><br><span class="line">        return;</span><br><span class="line">    &#125;</span><br><span class="line">    decisionHandler(WKNavigationActionPolicyAllow);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="Bridge-框架"><a href="#Bridge-框架" class="headerlink" title="Bridge 框架"></a>Bridge 框架</h3><p>这个 Native 和 JS 的 Bridge 交互如下：<br><img src="/2018/03/20/ccwork iOS Hybird框架/HybirdHandle.png" alt></p>
+<p><strong>Property</strong></p>
+<ul>
+<li>messageHandlers 字典，以 handlerName 作为 key，保存对应 function</li>
+<li>responseCallbacks 字典，以 callbackId 作为 key，保存响应 function</li>
+</ul>
+<p><strong>function</strong></p>
+<ul>
+<li>doSend: 调用另一端方法，传递 message 字典参数</li>
+<li>responseAnotherMethod: 响应另一端的调用，接收 message 字典参数</li>
+</ul>
+<h2 id="Manager"><a href="#Manager" class="headerlink" title="Manager"></a>Manager</h2><p>Manager 为整个 Hybrid 核心，负责 JS 方法到 Native 端的映射，可灵活扩展。利用 runtime 特性，使用得到的 className 和 functionName 反射出指定的对象，并执行指定函数。</p>
+<h2 id="权限验证"><a href="#权限验证" class="headerlink" title="权限验证"></a>权限验证</h2><p>针对打开的 WebView, 是否拥有合法使用 Hybrid 的权限需要进行验证，只有验证通过的页面，才能使用原生提供的能力。Manager 提供入口，具体验证由上层实现。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (void)authenticationSignatureParameter:(NSDictionary *)parameter comlete:(void (^)(NSError *error))complete;</span><br></pre></td></tr></table></figure>
+
+<h2 id="组件协议"><a href="#组件协议" class="headerlink" title="组件协议"></a>组件协议</h2><p>JS 页面加载完，在使用 Native 能力之前，需要进行注册，即告知 Native 当前页面所需要使用的 API 列表。Manager 处理该流程，验证 Native 是否实现该 API，同时把 API 转换成对象，对象遵循以下协议：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">@protocol KKWebViewJSApiBaseProtocol &lt;NSObject&gt;</span><br><span class="line"></span><br><span class="line">@required</span><br><span class="line">/// api名字</span><br><span class="line">@property (nonatomic, copy) NSString *apiName;</span><br><span class="line">/// 是否支持js多次回调</span><br><span class="line">@property (nonatomic, assign) NSInteger isNeedRegistId;</span><br><span class="line">/// 是否为事件类型，客户端调用，类似发通知给JS</span><br><span class="line">@property (nonatomic, assign) NSInteger isEvent;</span><br><span class="line">/// api接口参数数据</span><br><span class="line">@property (nonatomic, strong) NSDictionary *paramData;</span><br><span class="line">/// api接口响应回调</span><br><span class="line">@property (nonatomic, copy) WVJBResponseCallback responseCallback;</span><br><span class="line"></span><br><span class="line">@property (nonatomic, weak) KKWebViewJavaScriptManager *jsManager;</span><br><span class="line"></span><br><span class="line">@end;</span><br></pre></td></tr></table></figure>
+
+<h2 id="反射函数"><a href="#反射函数" class="headerlink" title="反射函数"></a>反射函数</h2><p>Manager 把 API 转换成对象时，利用 Objective-C 的 runtime 反射机制：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Class cls = NSClassFromString(className);</span><br><span class="line">if ([cls conformsToProtocol:@protocol(KKWebViewJSApiBaseProtocol)]) &#123;</span><br><span class="line">    id&lt;KKWebViewJSApiBaseProtocol&gt; obj = [[cls alloc] init];</span><br><span class="line">    if ([obj respondsToSelector:NSSelectorFromString(functionName)]) &#123;</span><br><span class="line">#pragma clang diagnostic push</span><br><span class="line">#pragma clang diagnostic ignored &quot;-Warc-performSelector-leaks&quot;</span><br><span class="line">        [obj performSelector:NSSelectorFromString(functionName)];</span><br><span class="line">#pragma clang diagnostic pop</span><br><span class="line">        return obj;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        NSLog(@&quot;function is not found&quot;);</span><br><span class="line">        return nil;</span><br><span class="line">    &#125;</span><br><span class="line">&#125; else &#123;</span><br><span class="line">    NSLog(@&quot;clss is not found&quot;);</span><br><span class="line">     return nil;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h2><p><a href="http://awhisper.github.io/2018/01/02/hybrid-jscomunication" target="_blank" rel="noopener">从零收拾一个hybrid框架</a></p>
+<p><a href="https://juejin.im/post/5abca877f265da238155b6bc" target="_blank" rel="noopener">JSBridge 的原理</a></p>
+<p><a href="https://mp.weixin.qq.com/s/rhYKLIbXOsUJC_n6dt9UfA" target="_blank" rel="noopener">WKWebView 那些坑</a></p>
+<p><a href="https://www.cnblogs.com/yexiaochai/p/4921635.html" target="_blank" rel="noopener">浅谈 Hybrid 技术的设计与实现</a><br><a href="https://blog.csdn.net/byeweiyang/article/details/75102051" target="_blank" rel="noopener"><br>58 同城 iOS 客户端 Hybrid 框架探索</a></p>
+<p><a href="https://lvwenhan.com/ios/460.html" target="_blank" rel="noopener">自己动手打造基于 WKWebView 的混合开发框架</a></p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-12T15:36:09+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>更新于 Sep 12, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+              
+                  <section class="next">
+                      <span class="art-item-right" aria-hidden="true">
+                          <h6>下一页&nbsp;<i class="fas fa-chevron-right" aria-hidden="true"></i></h6>
+                          <h4>
+                              <a href="/2018/03/12/hexo使用小技能/" rel="prev" title="hexo使用小技能">
+                                  
+                                      hexo使用小技能
+                                  
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/hexo使用/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> hexo使用</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '织语 iOS Hybird 框架',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://upload.wikimedia.org/wikipedia/zh/3/3f/Warcraft_Film_Poster.jpg'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;本文目录</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hybird-App-框架"><span class="toc-text">Hybird App 框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WebView-容器"><span class="toc-text">WebView 容器</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cookie-问题"><span class="toc-text">Cookie 问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#NSURLProtocol-支持"><span class="toc-text">NSURLProtocol 支持</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域访问"><span class="toc-text">跨域访问</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#跨域白屏的问题"><span class="toc-text">跨域白屏的问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#缓存问题"><span class="toc-text">缓存问题</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Bridge"><span class="toc-text">Bridge</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JS-gt-Native-交互"><span class="toc-text">JS -&gt; Native 交互</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Native-注入"><span class="toc-text">Native 注入</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#JS-调用"><span class="toc-text">JS 调用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Native-接收"><span class="toc-text">Native 接收</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Native-gt-JS"><span class="toc-text">Native -&gt; JS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#注入时机"><span class="toc-text">注入时机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bridge-框架"><span class="toc-text">Bridge 框架</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Manager"><span class="toc-text">Manager</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#权限验证"><span class="toc-text">权限验证</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#组件协议"><span class="toc-text">组件协议</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#反射函数"><span class="toc-text">反射函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hybird/" href="/categories/Hybird/"><div class='name'>Hybird</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/hexo使用/" style="font-size: 14px; color: #999">hexo使用</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+</div>
+  <div>
+    本站使用
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Hexo</a>
+    作为主题
+    
+      ，
+      总访问量为
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      次
+    
+    。
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "复制成功";
+  let COPY_FAILURE = "复制失败";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
