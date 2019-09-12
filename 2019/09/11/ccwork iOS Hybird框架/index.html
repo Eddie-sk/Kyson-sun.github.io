@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>My first blog | Kyson&#39;s blog</title>
+  <title>织语 iOS Hybird 框架 | Kyson&#39;s blog</title>
   
   
 
@@ -207,8 +207,8 @@
         
   
     <h1 class="title">
-      <a href="/2019/09/11/hello-world/">
-        My first blog
+      <a href="/2019/09/11/ccwork iOS Hybird框架/">
+        织语 iOS Hybird 框架
       </a>
     </h1>
   
@@ -283,7 +283,17 @@
 
     <section class="article typo">
       <div class="article-entry" itemprop="articleBody">
-        
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hybird 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。</p>
+<h2 id="Hybird-App-框架"><a href="#Hybird-App-框架" class="headerlink" title="Hybird App 框架"></a>Hybird App 框架</h2><p>一个完整的 Hybrid APP 框架主要包括 Manager、WebView 、Bridge、Cache 等模块。整个框架设计理念是组合，而不是继承，因此框架设计的不是一个 XXWebView / XXWebViewController 基类，使用者不需要在业务代码中继承 WebView 。框架设计的是一个 Manager 对象，使用者只需要跟自己业务中的任意一种 WebView 进行绑定，就可以拥有 Hybrid 的能力。</p>
+<ul>
+<li>Manager 作为核心， 负责处理 Hybird 业务，校验和注册API</li>
+<li>WebView 作为容器，负责展示前端页面，响应前端交互</li>
+<li>Bridge 作为桥梁，负责 Native 和 JS 之间通信交互</li>
+<li>Cache 作为缓存，负责缓存资源文件等</li>
+</ul>
+<p>框架结构如下：</p>
+<p><img src="../img/Hybirdframe.png" alt></p>
+
       </div>
       
         <br>
@@ -294,10 +304,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-11T17:58:48+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-12T11:35:35+08:00">
   <a class='notlink'>
     <i class="fas fa-clock" aria-hidden="true"></i>
-    <p>updated at Sep 11, 2019</p>
+    <p>updated at Sep 12, 2019</p>
   </a>
 </div>
 
@@ -341,7 +351,7 @@
 
   <script>
     window.subData = {
-      title: 'My first blog',
+      title: '织语 iOS Hybird 框架',
       tools: true
     }
   </script>
@@ -394,6 +404,20 @@
           
             
               
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hybird-App-框架"><span class="toc-text">Hybird App 框架</span></a></li></ol>
+    </div>
+  </section>
+
 
             
           

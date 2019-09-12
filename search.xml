@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>My first blog</title>
-      <link href="/2019/09/11/hello-world/"/>
-      <url>/2019/09/11/hello-world/</url>
+      <title>织语 iOS Hybird 框架</title>
+      <link href="/2019/09/11/ccwork%20iOS%20Hybird%E6%A1%86%E6%9E%B6/"/>
+      <url>/2019/09/11/ccwork%20iOS%20Hybird%E6%A1%86%E6%9E%B6/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Hybird 作为一种混合开发模式，依赖 Native 端的 Web 容器（UIWebView / WKWebView），上层使用 H5、JS 做业务开发。这种开发模式，非常有利于办公协同APP的开放平台搭建，由 Native 端提供API，供第三方使用开发、快速迭代。</p><h2 id="Hybird-App-框架"><a href="#Hybird-App-框架" class="headerlink" title="Hybird App 框架"></a>Hybird App 框架</h2><p>一个完整的 Hybrid APP 框架主要包括 Manager、WebView 、Bridge、Cache 等模块。整个框架设计理念是组合，而不是继承，因此框架设计的不是一个 XXWebView / XXWebViewController 基类，使用者不需要在业务代码中继承 WebView 。框架设计的是一个 Manager 对象，使用者只需要跟自己业务中的任意一种 WebView 进行绑定，就可以拥有 Hybrid 的能力。</p><ul><li>Manager 作为核心， 负责处理 Hybird 业务，校验和注册API</li><li>WebView 作为容器，负责展示前端页面，响应前端交互</li><li>Bridge 作为桥梁，负责 Native 和 JS 之间通信交互</li><li>Cache 作为缓存，负责缓存资源文件等</li></ul><p>框架结构如下：</p><p><img src="../img/Hybirdframe.png" alt></p>]]></content>
       
       
       
