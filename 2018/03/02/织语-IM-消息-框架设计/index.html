@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
-  <title>Tag: hexo使用 | Kyson&#39;s blog</title>
+  <title>织语 IM 消息 框架设计 | Kyson&#39;s blog</title>
   
   
 
@@ -44,7 +44,7 @@
   
   
   <div class="cover-wrapper">
-    <cover class='cover  half'>
+    <cover class='cover post half'>
       
         
   <h1 class='title'>Kyson's blog</h1>
@@ -141,7 +141,7 @@
 			
 				<div class="m_search">
 					<form name="searchform" class="form u-search-form">
-						<input type="text" class="input u-search-input" placeholder="搜索" />
+						<input type="text" class="input u-search-input" placeholder="Search" />
 						<i class="icon fas fa-search fa-fw"></i>
 					</form>
 				</div>
@@ -225,25 +225,11 @@
 
   <div class="l_body">
     <div class='body-wrapper'>
-      
-<div class='l_main'>
+      <div class='l_main'>
   
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
     
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <article class="post reveal ">
-  
 
 
   <section class='meta'>
@@ -252,11 +238,13 @@
     <div class="meta" id="header-meta">
       
         
-  <h2 class="title">
-    <a href="/2018/03/12/hexo使用小技能/">
-      hexo使用小技能
-    </a>
-  </h2>
+  
+    <h1 class="title">
+      <a href="/2018/03/02/织语-IM-消息-框架设计/">
+        织语 IM 消息 框架设计
+      </a>
+    </h1>
+  
 
 
       
@@ -284,7 +272,7 @@
             <div class="new-meta-item date">
   <a class='notlink'>
     <i class="fas fa-calendar-alt" aria-hidden="true"></i>
-    <p>2018-03-12</p>
+    <p>2018-03-02</p>
   </a>
 </div>
 
@@ -292,6 +280,24 @@
         
           
             
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
 
           
         
@@ -308,44 +314,146 @@
   </section>
 
 
-  <section class="article typo">
-    <div class="article-entry" itemprop="articleBody">
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>如何从零开始设计消息界面，应该考虑哪些问题。<br>架构的选型，消息页面承载了各种各样的业务，不应该所有业务都集中在 VC，随着业务的增长，VC 只会越来越臃肿，合适的架构，不仅便于拓展，也有利于消息页面的长足发展。</p>
+<p>消息页面业务列表：</p>
+<ul>
+<li>消息接收，发送，更新</li>
+<li>消息的上下加载</li>
+<li>不同消息 cell 展示</li>
+<li>cell 长按 menu 事件</li>
+<li>cell 内点击事件</li>
+<li>输入框事件</li>
+<li>不同消息页的展示</li>
+</ul>
+<h2 id="消息界面框架"><a href="#消息界面框架" class="headerlink" title="消息界面框架"></a>消息界面框架</h2><p>消息界面 MessageViewController 继承 UIViewController，由 UITableView(界面)，MessageConfig (消息配置)，MessageInteractor (逻辑控制器) 作为基本构成。</p>
+<h3 id="消息配置类"><a href="#消息配置类" class="headerlink" title="消息配置类"></a>消息配置类</h3><p>APP 内会存在不同消息界面展示需求，如单聊，群聊，公众号，历史消息浏览等，框架抽象出一些常用的配置接口以便于业务方修改界面。配置类不是必须实现的，如果不实现，则使用默认配置。</p>
+<p>配置类具体注入步骤为:</p>
+<ul>
+<li>继承消息类 MessageViewController 。</li>
+<li>创建配置类，实现协议 MessageConfig。</li>
+<li>在继承的消息类中，重写父类接口 - (id<messageconfig>)messageConfig 方法，返回创建的配置类。</messageconfig></li>
+</ul>
+<h3 id="逻辑实现类"><a href="#逻辑实现类" class="headerlink" title="逻辑实现类"></a>逻辑实现类</h3><p>由于消息界面比较复杂，框架抽象出了逻辑实现类接口 MessageInteractor<br>MessageInteractor 由 数据逻辑 MessageDataSource 和 排版逻辑 MessageLayout 两部分接口组成。</p>
+<p>数据逻辑 MessageDataSource 主要用于消息的数据的增删改查，作为界面的数据源，并缓存一些计算的中间数据，避免重复运算，提高性能。</p>
+<p>排版逻辑 MessageLayout 主要用于消息的排版操作， MessageLayout 不关心具体数据，只根据上层控制，对界面排版做出调整。</p>
+<h2 id="消息展示逻辑"><a href="#消息展示逻辑" class="headerlink" title="消息展示逻辑"></a>消息展示逻辑</h2><h3 id="消息普通展示"><a href="#消息普通展示" class="headerlink" title="消息普通展示"></a>消息普通展示</h3><ul>
+<li>消息通过 srvMsgId 和 clientOrder 两者共同排序。srvMsgId，为服务器生成的消息有序 Id。clientOrder 为本地客户端生成的有序数列。消息排序时，先根据 srvMsgId 进行排序，如果srvMsgId 一致，则在比较 clientOrder。正常情况下，发送成功的消息，即拥有唯一 srvMsgId。但客户端新建一条待发送的消息时，该消息的 srvMsgId，取至本地消息最大的 srvMsgId，同时 clientOrder 在最大消息的 clientOrder 上加一。这样子保证了本地消息排序的有序。等到新消息发送成功，服务器返回后，更新该 srvMsgId 为服务器的最新 srvMsgId，同时 clientOrder 置为0。</li>
+</ul>
+<blockquote>
+<p>消息发送成功后，返回 srvMsgId 可能导致排序变化，出于性能考量，不对已展示消息重新排序，等用户下次再进入消息界面，即会展示正确的消息排序。</p>
+</blockquote>
+<ul>
+<li>上拉拉取数据逻辑，异步加载一屏本地数据，如果本地数据不足一屏，则再异步拉取服务器数据。凑满一屏数据后，返回界面展示。当服务器返回无更多数据后，上拉拉取UI控件隐藏</li>
+<li>一直加载老数据，使得数据源消息数大于设定的最大值时，则清楚数据源内排序靠后的老数据，同时向下加载更多 UI 控件变更为显示</li>
+</ul>
+<blockquote>
+<p>上拉拉取时，菊花开始转，tableView 处于滑动状态，offset 一直在变。应该等 tableVew 停止滑动后，再开始进行 tableView 的 reloadData 操作，重设 offset。所以调用 performSelectorOnMainThread:withObject:waitUntilDone:modes: 执行 reloadData 操作，该方法能在 tableView 停止滑动，即 runloop 空闲后执行操作。</p>
+</blockquote>
+<ul>
+<li><p>下拉加载数据逻辑，仅当向下加载更多UI控件显示时，触发。逻辑同上拉拉取逻辑一致。当服务器返回无更多数据后，向下加载更多UI控件隐藏。</p>
+</li>
+<li><p>点击输入框时，界面直接跳转至最新数据展示。以向下加载更多UI控件是否隐藏作为标志位，如果隐藏，说明当前数据即为最新数据，界面直接跳转至末尾。如果显示，则当前数据不是最新数据，则清空界面数据，异步拉取最新一屏本地数据展示，同时异步拉取服务器最新数据，待服务器数据返回后，再和本地数据合并，展示在界面。</p>
+</li>
+<li><p>接收新消息时，后台线程计算Layout，计算完毕后，放入 pendingMessage 数组，在合适的时机，如 tableView 无滑动时，切主线程，一个一个的加入数据源，更新 tableView。如果数据源消息大于设定最大值，则清理数据源内排序靠前的老数据</p>
+</li>
+</ul>
+<h3 id="正常进入消息界面"><a href="#正常进入消息界面" class="headerlink" title="正常进入消息界面"></a>正常进入消息界面</h3><ul>
+<li>同步加载一屏本地数据，同时异步拉取服务器最新数据</li>
+<li>服务器最新数据返回，如果与本地一致，不做处理。如果数据量大于一屏，清楚之前加载数据，替换数据为最新一屏数据。如果数据量小于一屏，则在展示的本地数据后，直接添加最新数据</li>
+<li>向下加载更多UI控件隐藏</li>
+</ul>
+<h3 id="指定跳转某一条消息"><a href="#指定跳转某一条消息" class="headerlink" title="指定跳转某一条消息"></a>指定跳转某一条消息</h3><ul>
+<li>以该条消息为基准，异步上下加载一屏本地数据，如果本地数据不足一屏，则再异步拉取服务器数据。凑满一屏数据后，返回界面展示</li>
+<li>向下加载更多UI控件不隐藏</li>
+</ul>
+
+      </div>
       
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
       
-        <div class="readmore">
-          <a href="/2018/03/12/hexo使用小技能/" class="flat-box">
-            <i class="fas fa-book-open fa-fw" aria-hidden="true"></i>
-            阅读全文
-          </a>
-        </div>
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-17T11:14:38+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>updated at Sep 17, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/消息框架/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>消息框架</p></a></div>
+
+
+        
+      
+        
+          
+
+        
       
     </div>
-    
-      <div class="full-width auto-padding tags">
-        
-          <a href="/tags/hexo使用/" rel="nofollow"><i class="fas fa-tag fa-fw"></i> hexo使用</a>
-        
-      </div>
-    
   </section>
-</article>
 
-          </div>
-        
+
       
-    
-  </section>
-  
-    
-    <!-- 根据主题中的设置决定是否在archive中针对摘要部分的MathJax公式加载mathjax.js文件 -->
-    
-    
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2018/03/20/ccwork iOS Hybird框架/" rel="prev" title="织语 iOS Hybird 框架">
+                                
+                                    织语 iOS Hybird 框架
+                                
+                              </a>
+                          </h4>
+                          
+                      </span>
+                  </section>
+              
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
 
   
 
 
-    
-  
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: '织语 IM 消息 框架设计',
+      tools: true
+    }
+  </script>
+
+
 </div>
 <aside class='l_side'>
   
@@ -390,6 +498,25 @@
           
         
           
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#前言"><span class="toc-text">前言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息界面框架"><span class="toc-text">消息界面框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#消息配置类"><span class="toc-text">消息配置类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#逻辑实现类"><span class="toc-text">逻辑实现类</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#消息展示逻辑"><span class="toc-text">消息展示逻辑</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#消息普通展示"><span class="toc-text">消息普通展示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#正常进入消息界面"><span class="toc-text">正常进入消息界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#指定跳转某一条消息"><span class="toc-text">指定跳转某一条消息</span></a></li></ol></li></ol>
+    </div>
+  </section>
+
+
+            
           
         
           
@@ -475,7 +602,7 @@
   <section class='widget category'>
     
 <header class='pure'>
-  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;文章分类</div>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
   
     <a class="rightBtn"
     
@@ -525,7 +652,7 @@
   <section class='widget tagcloud'>
     
 <header class='pure'>
-  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;热门标签</div>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
   
     <a class="rightBtn"
     
@@ -539,12 +666,46 @@
 </header>
 
     <div class='content pure'>
-      <a href="/tags/hexo使用/" style="font-size: 14px; color: #999">hexo使用</a>
+      <a href="/tags/消息框架/" style="font-size: 14px; color: #999">消息框架</a>
     </div>
   </section>
 
 
             
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
           
         
       
@@ -557,19 +718,19 @@
   
   
   <br>
-  <div><p>博客内容遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</a></p>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
 </div>
   <div>
-    本站使用
+    Use
     <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Hexo</a>
-    作为主题
+    as theme
     
-      ，
-      总访问量为
+      , 
+      total visits
       <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
-      次
+      times
     
-    。
+    . 
   </div>
 </footer>
 <script>setLoadingBarProgress(80);</script>
@@ -675,15 +836,15 @@
 <!-- 复制 -->
 <script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
 <script>
-  let COPY_SUCCESS = "复制成功";
-  let COPY_FAILURE = "复制失败";
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
   /*页面载入完成后，创建复制按钮*/
   !function (e, t, a) {
     /* code */
     var initCopyCode = function(){
       var copyHtml = '';
       copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
-      copyHtml += '  <i class="fa fa-copy"></i><span>复制</span>';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
       copyHtml += '</button>';
       $(".highlight .code pre").before(copyHtml);
       var clipboard = new ClipboardJS('.btn-copy', {
