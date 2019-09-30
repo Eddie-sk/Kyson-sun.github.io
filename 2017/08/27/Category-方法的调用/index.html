@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <title>Category 方法的调用 | Kyson&#39;s blog</title>
+  
+  
+
+  
+
+  <meta name="HandheldFriendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- meta -->
+  
+
+  <!-- link -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.css">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.10.1/css/all.min.css">
+  
+
+  
+
+  
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9.9/css/style.css">
+  
+
+  <script>
+    function setLoadingBarProgress(num) {
+      document.getElementById('loading-bar').style.width=num+"%";
+    }
+  </script>
+
+  
+  
+</head>
+
+<body>
+  
+  
+  <div class="cover-wrapper">
+    <cover class='cover post half'>
+      
+        
+  <h1 class='title'>Kyson's blog</h1>
+
+
+  <div class="m_search">
+    <form name="searchform" class="form u-search-form">
+      <input type="text" class="input u-search-input" placeholder="" />
+      <i class="icon fas fa-search fa-fw"></i>
+    </form>
+  </div>
+
+<div class='menu navgation'>
+  <ul class='h-list'>
+    
+      
+        <li>
+          <a class="nav home" href="/"
+            
+            
+            id="home">
+            <i class='fas fa-rss fa-fw'></i>&nbsp;博文
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+
+      
+    </cover>
+    <header class="l_header pure">
+  <div id="loading-bar-wrapper">
+    <div id="loading-bar" class="pure"></div>
+  </div>
+
+	<div class='wrapper'>
+		<div class="nav-main container container--flex">
+      <a class="logo flat-box" href='/' >
+        
+          Kyson's blog
+        
+      </a>
+			<div class='menu navgation'>
+				<ul class='h-list'>
+          
+  					
+  						<li>
+								<a class="nav flat-box" href="/"
+                  
+                  
+                  id="home">
+									<i class='fas fa-grin fa-fw'></i>&nbsp;示例
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/categories/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="categories">
+									<i class='fas fa-folder-open fa-fw'></i>&nbsp;分类
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/tags/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="tags">
+									<i class='fas fa-hashtag fa-fw'></i>&nbsp;标签
+								</a>
+							</li>
+      			
+  						<li>
+								<a class="nav flat-box" href="/archives/"
+                  
+                    rel="nofollow"
+                  
+                  
+                  id="archives">
+									<i class='fas fa-archive fa-fw'></i>&nbsp;归档
+								</a>
+							</li>
+      			
+      		
+				</ul>
+			</div>
+
+			
+				<div class="m_search">
+					<form name="searchform" class="form u-search-form">
+						<input type="text" class="input u-search-input" placeholder="Search" />
+						<i class="icon fas fa-search fa-fw"></i>
+					</form>
+				</div>
+			
+			<ul class='switcher h-list'>
+				
+					<li class='s-search'><a class="fas fa-search fa-fw" href='javascript:void(0)'></a></li>
+				
+				<li class='s-menu'><a class="fas fa-bars fa-fw" href='javascript:void(0)'></a></li>
+			</ul>
+		</div>
+
+		<div class='nav-sub container container--flex'>
+			<a class="logo flat-box"></a>
+			<ul class='switcher h-list'>
+				<li class='s-comment'><a class="flat-btn fas fa-comments fa-fw" href='javascript:void(0)'></a></li>
+        
+          <li class='s-toc'><a class="flat-btn fas fa-list fa-fw" href='javascript:void(0)'></a></li>
+        
+			</ul>
+		</div>
+	</div>
+</header>
+	<aside class="menu-phone">
+    <header>
+		<nav class="menu navgation">
+      <ul>
+        
+          
+            <li>
+							<a class="nav flat-box" href="/"
+                
+                
+                id="home">
+								<i class='fas fa-clock fa-fw'></i>&nbsp;近期文章
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/archives/"
+                
+                  rel="nofollow"
+                
+                
+                id="archives">
+								<i class='fas fa-archive fa-fw'></i>&nbsp;文章归档
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/categories/"
+                
+                  rel="nofollow"
+                
+                
+                id="categories">
+								<i class='fas fa-folder-open fa-fw'></i>&nbsp;文章分类
+							</a>
+            </li>
+          
+            <li>
+							<a class="nav flat-box" href="/tags/"
+                
+                  rel="nofollow"
+                
+                
+                id="tags">
+								<i class='fas fa-hashtag fa-fw'></i>&nbsp;文章标签
+							</a>
+            </li>
+          
+       
+      </ul>
+		</nav>
+    </header>
+	</aside>
+<script>setLoadingBarProgress(40);</script>
+
+  </div>
+
+
+  <div class="l_body">
+    <div class='body-wrapper'>
+      <div class='l_main'>
+  
+
+  <article id="post" class="post white-box article-type-post" itemscope itemprop="blogPost">
+    
+
+
+  <section class='meta'>
+    
+    
+    <div class="meta" id="header-meta">
+      
+        
+  
+    <h1 class="title">
+      <a href="/2017/08/27/Category-方法的调用/">
+        Category 方法的调用
+      </a>
+    </h1>
+  
+
+
+      
+      <div class='new-meta-box'>
+        
+          
+        
+          
+            
+  <div class='new-meta-item author'>
+    
+      <a href="http://Kyson-sun.github.io" rel="nofollow">
+        
+          <i class="fas fa-user" aria-hidden="true"></i>
+        
+        <p>Kyson</p>
+      </a>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt" aria-hidden="true"></i>
+    <p>2017-08-27</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+          
+            
+  
+    <div class="new-meta-item browse busuanzi">
+      <a class='notlink'>
+        <i class="fas fa-eye" aria-hidden="true"></i>
+        <p>
+          <span id="busuanzi_value_page_pv">
+            <i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i>
+          </span>
+        </p>
+      </a>
+    </div>
+  
+
+
+          
+        
+          
+            
+
+          
+        
+      </div>
+      
+        <hr>
+      
+    </div>
+  </section>
+
+
+    <section class="article typo">
+      <div class="article-entry" itemprop="articleBody">
+        <h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>Category 是 Objective-C 2.0之后添加的，Category 的主要作用是为已经存在的类添加方法。另外，Apple 还推荐了 Category 的另外两个使用场景。</p>
+<ol>
+<li>可以把类的实现分开在几个不同的文件里。这样可以减少单个文件的体积，可以把不同的功能组织到不同的文件里，可以多个开发者维护一个类，可以按需加载想要的 Category</li>
+<li>声明私有方法</li>
+</ol>
+<p>另外我们也可以使用 Category 实现一些意想不到的功能</p>
+<ol>
+<li>模拟多继承</li>
+<li>公开 Framework 的私有方法</li>
+</ol>
+<h3 id="Category-和-Extension"><a href="#Category-和-Extension" class="headerlink" title="Category 和 Extension"></a>Category 和 Extension</h3><ol>
+<li>extension 在编译期决议，他就是类的一部分，在编译期和头文件里的 @interface 以及实现文件里的 @impletment 一起形成一个完整的类，它伴随类的产生和消亡。</li>
+<li>extension 一般来隐藏类的私有信息，但是必须要有类的源码才能为一个类添加extension，所以无法为系统的类添加extension</li>
+<li>category 则是运行期决议</li>
+<li>extension 可以添加实例变量，而 category 无法添加实例变量。因为在运行期，对象的内存布局已经确定，如果添加实例变量会破坏类的内部布局</li>
+</ol>
+<h3 id="Category-源码"><a href="#Category-源码" class="headerlink" title="Category 源码"></a>Category 源码</h3><p>Category 在 objc-runtime-new.h 中，Category（分类）被定义为 category_t 结构体。category_t 结构体的数据结构如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">typedef struct category_t *Category;</span><br><span class="line"></span><br><span class="line">struct category_t &#123;</span><br><span class="line">    const char *name;                                // 类名</span><br><span class="line">    classref_t cls;                                  // 类，在运行时阶段通过 clasee_name（类名）对应到类对象</span><br><span class="line">    struct method_list_t *instanceMethods;           // Category 中所有添加的对象方法列表</span><br><span class="line">    struct method_list_t *classMethods;              // Category 中所有添加的类方法列表</span><br><span class="line">    struct protocol_list_t *protocols;               // Category 中实现的所有协议列表</span><br><span class="line">    struct property_list_t *instanceProperties;      // Category 中添加的所有属性</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>从 Category 的结构体中可以看出，Category 可以为类添加实例方法、类方法、protocol和property，但是并不能添加成员变量</p>
+<p>People.h</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">@interface People : NSObject</span><br><span class="line"></span><br><span class="line">- (void)run;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@interface People (Addition)</span><br><span class="line"></span><br><span class="line">@property (nonatomic, copy) NSString *name;</span><br><span class="line"></span><br><span class="line">- (void)run;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>People.m</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;People.h&quot;</span><br><span class="line">#import &lt;objc/runtime.h&gt;</span><br><span class="line"></span><br><span class="line">@implementation People</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation People (Addition)</span><br><span class="line"></span><br><span class="line">- (void)setName:(NSString *)name &#123;</span><br><span class="line">    objc_setAssociatedObject(self, @selector(name), name, OBJC_ASSOCIATION_COPY_NONATOMIC);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (NSString *)name &#123;</span><br><span class="line">    return objc_getAssociatedObject(self, @selector(name));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (void)run &#123;</span><br><span class="line">    NSLog(@&quot;%@ can run&quot;,self.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+<p>使用clang命令查看 Category 到底是啥玩意</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clang -rewrite-objc People.m</span><br></pre></td></tr></table></figure>
+
+<p>我们会得到一个巨大无比的 cpp 文件，我们先忽略文件的大小，先看一下文件最后</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">static struct /*_method_list_t*/ &#123;</span><br><span class="line">	unsigned int entsize;  // sizeof(struct _objc_method)</span><br><span class="line">	unsigned int method_count;</span><br><span class="line">	struct _objc_method method_list[3];</span><br><span class="line">&#125; _OBJC_$_CATEGORY_INSTANCE_METHODS_People_$_Addition __attribute__ ((used, section (&quot;__DATA,__objc_const&quot;))) = &#123;</span><br><span class="line">	sizeof(_objc_method),</span><br><span class="line">	3,</span><br><span class="line">	&#123;&#123;(struct objc_selector *)&quot;setName:&quot;, &quot;v24@0:8@16&quot;, (void *)_I_People_Addition_setName_&#125;,</span><br><span class="line">	&#123;(struct objc_selector *)&quot;name&quot;, &quot;@16@0:8&quot;, (void *)_I_People_Addition_name&#125;,</span><br><span class="line">	&#123;(struct objc_selector *)&quot;run&quot;, &quot;v16@0:8&quot;, (void *)_I_People_Addition_run&#125;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">static struct /*_prop_list_t*/ &#123;</span><br><span class="line">	unsigned int entsize;  // sizeof(struct _prop_t)</span><br><span class="line">	unsigned int count_of_properties;</span><br><span class="line">	struct _prop_t prop_list[1];</span><br><span class="line">&#125; _OBJC_$_PROP_LIST_People_$_Addition __attribute__ ((used, section (&quot;__DATA,__objc_const&quot;))) = &#123;</span><br><span class="line">	sizeof(_prop_t),</span><br><span class="line">	1,</span><br><span class="line">	&#123;&#123;&quot;name&quot;,&quot;T@\&quot;NSString\&quot;,C,N&quot;&#125;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">extern &quot;C&quot; __declspec(dllexport) struct _class_t OBJC_CLASS_$_People;</span><br><span class="line"></span><br><span class="line">static struct _category_t _OBJC_$_CATEGORY_People_$_Addition __attribute__ ((used, section (&quot;__DATA,__objc_const&quot;))) = </span><br><span class="line">&#123;</span><br><span class="line">	&quot;People&quot;,</span><br><span class="line">	0, // &amp;OBJC_CLASS_$_People,</span><br><span class="line">	(const struct _method_list_t *)&amp;_OBJC_$_CATEGORY_INSTANCE_METHODS_People_$_Addition,//生成实例方法列表</span><br><span class="line">	0,</span><br><span class="line">	0,</span><br><span class="line">	(const struct _prop_list_t *)&amp;_OBJC_$_PROP_LIST_People_$_Addition,//生成属性列表</span><br><span class="line">&#125;;</span><br><span class="line">static void OBJC_CATEGORY_SETUP_$_People_$_Addition(void ) &#123;</span><br><span class="line">	_OBJC_$_CATEGORY_People_$_Addition.cls = &amp;OBJC_CLASS_$_People;</span><br><span class="line">&#125;</span><br><span class="line">#pragma section(&quot;.objc_inithooks$B&quot;, long, read, write)</span><br><span class="line">__declspec(allocate(&quot;.objc_inithooks$B&quot;)) static void *OBJC_CATEGORY_SETUP[] = &#123;</span><br><span class="line">	(void *)&amp;OBJC_CATEGORY_SETUP_$_People_$_Addition,</span><br><span class="line">&#125;;</span><br><span class="line">static struct _class_t *L_OBJC_LABEL_CLASS_$ [1] __attribute__((used, section (&quot;__DATA, __objc_classlist,regular,no_dead_strip&quot;)))= &#123;</span><br><span class="line">	&amp;OBJC_CLASS_$_People,</span><br><span class="line">&#125;;</span><br><span class="line">static struct _category_t *L_OBJC_LABEL_CATEGORY_$ [1] __attribute__((used, section (&quot;__DATA, __objc_catlist,regular,no_dead_strip&quot;)))= &#123;</span><br><span class="line">	&amp;_OBJC_$_CATEGORY_People_$_Addition,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>由此我们可以看到，</p>
+<ol>
+<li>编译器生成了实例方法列表 <em>OBJC</em>$<em>CATEGORY_INSTANCE_METHODS_People</em>$<em>Addition 和属性列表 _OBJC</em>$<em>PROP_LIST_People</em>$_Addition， 且实例方法列表里填充的正是我们在 category 中写的方法 run ，而属性列表中正是我们在 category 中声明的 name 属性。另外 category 的名字用来给各种列表以及后面的 category 结构体本身命名，用 static 来修饰，所以在一个编译单元里我们的 category 名不能重复，否则会编译错误</li>
+<li>编译器生成了 category 本身 <em>OBJC</em>$<em>CATEGORY_People</em>$_Addition，并用前面生成的列表来初始化 category 本身</li>
+<li>编译器在 DATA 段下的 objc_catlist section 里保存了一个大小为 1 的 category_t 的数组 L_OBJC_LABEL_CATEGORY_ （如果有多个 category 会生成对应长度的数组），用于运行期 category 加载</li>
+</ol>
+<h3 id="category-加载"><a href="#category-加载" class="headerlink" title="category 加载"></a>category 加载</h3><p>Objective-C 的运行是依赖 OC 的 runtime 的，而 OC 的 runtime 是通过 dyld 动态加载的</p>
+<ol>
+<li>OC 运行时入口方法 （objc-os.mm）</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">	void _objc_init(void)</span><br><span class="line">&#123;</span><br><span class="line">    static bool initialized = false;</span><br><span class="line">    if (initialized) return;</span><br><span class="line">    initialized = true;</span><br><span class="line">   </span><br><span class="line">    // fixme defer initialization until an objc-using image is found?</span><br><span class="line">    environ_init();</span><br><span class="line">    tls_init();</span><br><span class="line">    lock_init();</span><br><span class="line">    exception_init();</span><br><span class="line">       </span><br><span class="line">    // Register for unmap first, in case some +load unmaps something</span><br><span class="line">    _dyld_register_func_for_remove_image(&amp;unmap_image);</span><br><span class="line">    dyld_register_image_state_change_handler(dyld_image_state_bound,</span><br><span class="line">                                             1/*batch*/, &amp;map_images);</span><br><span class="line">    dyld_register_image_state_change_handler(dyld_image_state_dependents_initialized, 0/*not batch*/, &amp;load_images);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>category 被附加到类上面是在 map_images 的时候发生的，在 new-API 的标准下，_objc_init 里面的调用的 map_images 最终会调用 objc-runtime-new.mm 里面的 _read_images 方法，而在 _read_images 方法的结尾，有以下的代码片段：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line">// Discover categories. </span><br><span class="line">    for (EACH_HEADER) &#123;</span><br><span class="line">        category_t **catlist =</span><br><span class="line">            _getObjc2CategoryList(hi, &amp;count);</span><br><span class="line">        for (i = 0; i &lt; count; i++) &#123;</span><br><span class="line">            category_t *cat = catlist[i];</span><br><span class="line">            class_t *cls = remapClass(cat-&gt;cls);</span><br><span class="line"></span><br><span class="line">            if (!cls) &#123;</span><br><span class="line">                // Category&apos;s target class is missing (probably weak-linked).</span><br><span class="line">                // Disavow any knowledge of this category.</span><br><span class="line">                catlist[i] = NULL;</span><br><span class="line">                if (PrintConnecting) &#123;</span><br><span class="line">                    _objc_inform(&quot;CLASS: IGNORING category \?\?\?(%s) %p with &quot;</span><br><span class="line">                                 &quot;missing weak-linked target class&quot;,</span><br><span class="line">                                 cat-&gt;name, cat);</span><br><span class="line">                &#125;</span><br><span class="line">                continue;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            // Process this category. </span><br><span class="line">            // First, register the category with its target class. </span><br><span class="line">            // Then, rebuild the class&apos;s method lists (etc) if </span><br><span class="line">            // the class is realized. </span><br><span class="line">            BOOL classExists = NO;</span><br><span class="line">            if (cat-&gt;instanceMethods ||  cat-&gt;protocols </span><br><span class="line">                ||  cat-&gt;instanceProperties)</span><br><span class="line">            &#123;</span><br><span class="line">                addUnattachedCategoryForClass(cat, cls, hi);</span><br><span class="line">                if (isRealized(cls)) &#123;</span><br><span class="line">                    remethodizeClass(cls);</span><br><span class="line">                    classExists = YES;</span><br><span class="line">                &#125;</span><br><span class="line">                if (PrintConnecting) &#123;</span><br><span class="line">                    _objc_inform(&quot;CLASS: found category -%s(%s) %s&quot;,</span><br><span class="line">                                 getName(cls), cat-&gt;name,</span><br><span class="line">                                 classExists ? &quot;on existing class&quot; : &quot;&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            if (cat-&gt;classMethods  ||  cat-&gt;protocols </span><br><span class="line">                /* ||  cat-&gt;classProperties */)</span><br><span class="line">            &#123;</span><br><span class="line">                addUnattachedCategoryForClass(cat, cls-&gt;isa, hi);</span><br><span class="line">                if (isRealized(cls-&gt;isa)) &#123;</span><br><span class="line">                    remethodizeClass(cls-&gt;isa);</span><br><span class="line">                &#125;</span><br><span class="line">                if (PrintConnecting) &#123;</span><br><span class="line">                    _objc_inform(&quot;CLASS: found category +%s(%s)&quot;,</span><br><span class="line">                                 getName(cls), cat-&gt;name);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p>首先，我们拿到的 catlist 就是上节中讲到的编译器为我们准备的 category_t 数组</p>
+<p>这段代码的意思就是：</p>
+<ol>
+<li>把 category 的实例方法、协议以及属性添加到类上</li>
+<li>把 category 的类方法和协议添加到类的 meta class 上</li>
+</ol>
+<p>我们接着往里看，category的各种列表是怎么最终添加到类上的，就拿实例方法列表来说吧：</p>
+<p>在上述的代码片段里，addUnattachedCategoryForClass 只是把类和 category 做一个关联映射，而 remethodizeClass 才是真正去做添加的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">static void remethodizeClass(class_t *cls)</span><br><span class="line">&#123;</span><br><span class="line">    category_list *cats;</span><br><span class="line">    BOOL isMeta;</span><br><span class="line"></span><br><span class="line">    rwlock_assert_writing(&amp;runtimeLock);</span><br><span class="line"></span><br><span class="line">    isMeta = isMetaClass(cls);</span><br><span class="line"></span><br><span class="line">    // Re-methodizing: check for more categories</span><br><span class="line">    if ((cats = unattachedCategoriesForClass(cls))) &#123;</span><br><span class="line">        chained_property_list *newproperties;</span><br><span class="line">        const protocol_list_t **newprotos;</span><br><span class="line">       </span><br><span class="line">        if (PrintConnecting) &#123;</span><br><span class="line">            _objc_inform(&quot;CLASS: attaching categories to class &apos;%s&apos; %s&quot;,</span><br><span class="line">                         getName(cls), isMeta ? &quot;(meta)&quot; : &quot;&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        // Update methods, properties, protocols</span><br><span class="line">       </span><br><span class="line">        BOOL vtableAffected = NO;</span><br><span class="line">        attachCategoryMethods(cls, cats, &amp;vtableAffected);</span><br><span class="line">       </span><br><span class="line">        newproperties = buildPropertyList(NULL, cats, isMeta);</span><br><span class="line">        if (newproperties) &#123;</span><br><span class="line">            newproperties-&gt;next = cls-&gt;data()-&gt;properties;</span><br><span class="line">            cls-&gt;data()-&gt;properties = newproperties;</span><br><span class="line">        &#125;</span><br><span class="line">       </span><br><span class="line">        newprotos = buildProtocolList(cats, NULL, cls-&gt;data()-&gt;protocols);</span><br><span class="line">        if (cls-&gt;data()-&gt;protocols  &amp;&amp;  cls-&gt;data()-&gt;protocols != newprotos) &#123;</span><br><span class="line">            _free_internal(cls-&gt;data()-&gt;protocols);</span><br><span class="line">        &#125;</span><br><span class="line">        cls-&gt;data()-&gt;protocols = newprotos;</span><br><span class="line">       </span><br><span class="line">        _free_internal(cats);</span><br><span class="line"></span><br><span class="line">        // Update method caches and vtables</span><br><span class="line">        flushCaches(cls);</span><br><span class="line">        if (vtableAffected) flushVtables(cls);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>而对于添加类的实例方法而言，又会去调用 attachCategoryMethods 这个方法，我们去看下 attachCategoryMethods ：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">static void </span><br><span class="line">attachCategoryMethods(class_t *cls, category_list *cats,</span><br><span class="line">                      BOOL *inoutVtablesAffected)</span><br><span class="line">&#123;</span><br><span class="line">    if (!cats) return;</span><br><span class="line">    if (PrintReplacedMethods) printReplacements(cls, cats);</span><br><span class="line"></span><br><span class="line">    BOOL isMeta = isMetaClass(cls);</span><br><span class="line">    method_list_t **mlists = (method_list_t **)</span><br><span class="line">        _malloc_internal(cats-&gt;count * sizeof(*mlists));</span><br><span class="line"></span><br><span class="line">    // Count backwards through cats to get newest categories first</span><br><span class="line">    int mcount = 0;</span><br><span class="line">    int i = cats-&gt;count;</span><br><span class="line">    BOOL fromBundle = NO;</span><br><span class="line">    while (i--) &#123;</span><br><span class="line">        method_list_t *mlist = cat_method_list(cats-&gt;list[i].cat, isMeta);</span><br><span class="line">        if (mlist) &#123;</span><br><span class="line">            mlists[mcount++] = mlist;</span><br><span class="line">            fromBundle |= cats-&gt;list[i].fromBundle;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    attachMethodLists(cls, mlists, mcount, NO, fromBundle, inoutVtablesAffected);</span><br><span class="line"></span><br><span class="line">    _free_internal(mlists);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>attachCategoryMethods 只是把所有 category 的实例方法列表拼成了一个大的实例方法列表，然后转交给了 attachMethodLists 方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">for (uint32_t m = 0;</span><br><span class="line">        (scanForCustomRR || scanForCustomAWZ)  &amp;&amp;  m &lt; mlist-&gt;count;</span><br><span class="line">        m++)</span><br><span class="line">   &#123;</span><br><span class="line">       SEL sel = method_list_nth(mlist, m)-&gt;name;</span><br><span class="line">       if (scanForCustomRR  &amp;&amp;  isRRSelector(sel)) &#123;</span><br><span class="line">           cls-&gt;setHasCustomRR();</span><br><span class="line">           scanForCustomRR = false;</span><br><span class="line">       &#125; else if (scanForCustomAWZ  &amp;&amp;  isAWZSelector(sel)) &#123;</span><br><span class="line">           cls-&gt;setHasCustomAWZ();</span><br><span class="line">           scanForCustomAWZ = false;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br><span class="line">  </span><br><span class="line">   // Fill method list array</span><br><span class="line">   newLists[newCount++] = mlist;</span><br><span class="line">   .</span><br><span class="line">   .</span><br><span class="line">   .</span><br><span class="line"></span><br><span class="line">   // Copy old methods to the method list array</span><br><span class="line">   for (i = 0; i &lt; oldCount; i++) &#123;</span><br><span class="line">       newLists[newCount++] = oldLists[i];</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>需要注意的有两点：</p>
+<ol>
+<li><p>category 的方法没有“完全替换掉”原来类已经有的方法，也就是说如果 category 和原来类都有 methodA，那么category 附加完成之后，类的方法列表里会有两个 methodA</p>
+</li>
+<li><p>category 的方法被放到了新方法列表的前面，而原来类的方法被放到了新方法列表的后面，这也就是我们平常所说的 category 的方法会“覆盖”掉原来类的同名方法，这是因为运行时在查找方法的时候是顺着方法列表的顺序查找的，它只要一找到对应名字的方法，就会退出。</p>
+</li>
+</ol>
+<p>_objc_init-&gt;map_images-&gt;objc-runtime-new.mm-&gt;_read_images-&gt;getCategoryList-&gt; addUnattachedCategoryForClass(把类和category做一个关联映射)-&gt; remethodizeClass-&gt; attachCategoryMethods-&gt;添加到类中相应的list（instanceMethodList，classMethodList）中</p>
+<h3 id="Category-和-load"><a href="#Category-和-load" class="headerlink" title="Category 和 + load"></a>Category 和 + load</h3><p>在 + load 方法执行之前，类中就已经加载了 Category 中的方法、属性和协议。而 Category 和 Class 的 + load 方法的调用顺序规则如下：</p>
+<ol>
+<li>先调用父类，按照编译顺序，顺序的根据继承关系由父类向子类调用</li>
+<li>调用父类之后，再调用父类，按照编译顺序（文件加载到工程中的顺序），依次调用</li>
+<li><ul>
+<li>load 方法除非主动调用，否则只会调用一次</li>
+</ul>
+</li>
+</ol>
+<h3 id="Category-关联对象"><a href="#Category-关联对象" class="headerlink" title="Category 关联对象"></a>Category 关联对象</h3><p>前面说过，在 Category 中虽然可以添加属性，但是不会生成对应的成员变量，也不能生成 getter、setter 方法。因此，在调用 Category 中声明的属性时会报错(unrecognized selector sent to instance)。</p>
+<p>我们可以自己实现 getter、setter 方法，并借助关联对象（Object-C Association Class）来实现 getter、setter方法。关联对象帮助我们在运行阶段将任意的属性关联到一个对象上。具体需要用到这些方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">void objc_setAssociatedObject(id object, const void *key, id value, objc_AssociationPolicy policy);//以键值对形式添加关联对象</span><br><span class="line"></span><br><span class="line">id objc_getAssociatedObject(id object, const void *key);//根据 key 获取关联对象</span><br><span class="line"></span><br><span class="line">void objc_removeAssociatedObjects(id object);//移除所有关联对象</span><br></pre></td></tr></table></figure>
+
+<h3 id="Category-存储"><a href="#Category-存储" class="headerlink" title="Category 存储"></a>Category 存储</h3><p>关联对象由 AssociationManager 管理，并在全局的 AssociationHashMap 中存储。所有对象的关联对象都在同一个容器中，这个全局容器的数据结构如下图所示</p>
+<p><img src="/2017/08/27/Category-方法的调用/1915113-aedbce0b73e014c4.png" alt></p>
+<p>AssociationsManager 内部核心代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//AssociationsManager内包含AssociationsHashMap</span><br><span class="line">class AssociationsManager &#123;</span><br><span class="line">    static AssociationsHashMap *_map;</span><br><span class="line">&#125;</span><br><span class="line">//AssociationsHashMap内包含ObjectAssociationMap</span><br><span class="line">class AssociationsHashMap : public unordered_map&lt;disguised_ptr_t, ObjectAssociationMap *, DisguisedPointerHash, DisguisedPointerEqual, AssociationsHashMapAllocator&gt; </span><br><span class="line">//ObjectAssociationMap内包含ObjcAssociation</span><br><span class="line">class ObjectAssociationMap : public std::map&lt;void *, ObjcAssociation, ObjectPointerLess, ObjectAssociationMapAllocator&gt;</span><br><span class="line"></span><br><span class="line">//ObjcAssociation 内包含策略和属性值</span><br><span class="line">class ObjcAssociation &#123;</span><br><span class="line">        uintptr_t _policy;</span><br><span class="line">        id _value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>map 的 key 是这个对象的指针地址，而这个 map 的 value 又是另外一个 AssociationHashMap，里面保存了关联对象的 KV 对</p>
+<blockquote>
+<p>为什么不放在本类中，由于类的内存布局已预先设置，关联对象添加的属性不能放在原有类的数据结构上，以 Key Value 形式存在全局容器中</p>
+</blockquote>
+<h3 id="如何清除一个关联对象"><a href="#如何清除一个关联对象" class="headerlink" title="如何清除一个关联对象"></a>如何清除一个关联对象</h3><ol>
+<li>将 Key 对应的 Value 置为 nil，调用 objc_setAssociatedObject 方法传入一个 nil 值</li>
+<li>objc_removeAssociatedObjects(id object), 移除类的所有关联对象（苹果不推荐此用法，可能会导致其他客户对其添加的属性也被移除）</li>
+</ol>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><p><a href="https://tech.meituan.com/2015/03/03/diveintocategory.html" target="_blank" rel="noopener">深入理解Objective-C：Category</a></p>
+<p><a href="https://developer.apple.com/library/archive/documentation/General/Conceptual/DevPedia-CocoaCore/Category.html" target="_blank" rel="noopener">Category</a></p>
+<p><a href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/CustomizingExistingClasses/CustomizingExistingClasses.html" target="_blank" rel="noopener">Customizing Existing Classes</a></p>
+<p><a href="https://www.mikeash.com/pyblog/friday-qa-2012-11-09-dyld-dynamic-linking-on-os-x.html" target="_blank" rel="noopener">dyld: Dynamic Linking On OS X</a></p>
+
+      </div>
+      
+        <br>
+        
+
+
+  <section class='meta' id="footer-meta">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2019-09-30T14:14:26+08:00">
+  <a class='notlink'>
+    <i class="fas fa-clock" aria-hidden="true"></i>
+    <p>updated at Sep 30, 2019</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/Category/" rel="nofollow"><i class="fas fa-tag" aria-hidden="true"></i><p>Category</p></a></div>
+
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+  </section>
+
+
+      
+      
+          <div class="prev-next">
+              
+                  <section class="prev">
+                      <span class="art-item-left">
+                          <h6><i class="fas fa-chevron-left" aria-hidden="true"></i>&nbsp;Previous</h6>
+                          <h4>
+                              <a href="/2018/03/02/织语-IM-消息-框架设计/" rel="prev" title="织语 IM 消息 框架设计">
+                                
+                                    织语 IM 消息 框架设计
+                                
+                              </a>
+                          </h4>
+                          
+                              
+                              <h6 class="tags">
+                                  <a class="tag" href="/tags/消息框架/"><i class="fas fa-tag fa-fw" aria-hidden="true"></i> 消息框架</a>
+                              </h6>
+                          
+                      </span>
+                  </section>
+              
+              
+          </div>
+      
+    </section>
+  </article>
+
+
+
+  <!-- 显示推荐文章和评论 -->
+
+
+
+  
+
+
+
+
+
+
+<!-- 根据页面mathjax变量决定是否加载MathJax数学公式js -->
+
+
+
+  <script>
+    window.subData = {
+      title: 'Category 方法的调用',
+      tools: true
+    }
+  </script>
+
+
+</div>
+<aside class='l_side'>
+  
+    
+    
+      
+      
+        
+          
+          
+            
+              <section class='widget author'>
+  <div class='content pure'>
+    
+      <div class='avatar'>
+        <img class='avatar' src='https://upload.wikimedia.org/wikipedia/zh/3/3f/Warcraft_Film_Poster.jpg'/>
+      </div>
+    
+    
+    
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget toc-wrapper'>
+    
+<header class='pure'>
+  <div><i class="fas fa-list fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;TOC</div>
+  
+    <!-- <div class='wrapper'><a class="s-toc rightBtn" rel="external nofollow noopener noreferrer" href="javascript:void(0)"><i class="fas fa-thumbtack fa-fw"></i></a></div> -->
+  
+</header>
+
+    <div class='content pure'>
+      <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#简介"><span class="toc-text">简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Category-和-Extension"><span class="toc-text">Category 和 Extension</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Category-源码"><span class="toc-text">Category 源码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#category-加载"><span class="toc-text">category 加载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Category-和-load"><span class="toc-text">Category 和 + load</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Category-关联对象"><span class="toc-text">Category 关联对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Category-存储"><span class="toc-text">Category 存储</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#如何清除一个关联对象"><span class="toc-text">如何清除一个关联对象</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#参考文章"><span class="toc-text">参考文章</span></a></li></ol>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              <section class='widget grid'>
+  
+<header class='pure'>
+  <div><i class="fas fa-map-signs fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;站内导航</div>
+  
+</header>
+
+  <div class='content pure'>
+    <ul class="grid navgation">
+      
+        <li><a class="flat-box" title="/" href="/"
+          
+          
+          id="home">
+          
+            <i class="fas fa-clock fa-fw" aria-hidden="true"></i>
+          
+          近期文章
+        </a></li>
+      
+        <li><a class="flat-box" title="/archives/" href="/archives/"
+          
+            rel="nofollow"
+          
+          
+          id="archives">
+          
+            <i class="fas fa-archive fa-fw" aria-hidden="true"></i>
+          
+          文章归档
+        </a></li>
+      
+    </ul>
+  </div>
+</section>
+
+            
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget category'>
+    
+<header class='pure'>
+  <div><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Categories</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/categories/"
+    title="/categories/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <ul class="entry">
+        
+          <li><a class="flat-box" title="/categories/Hybird/" href="/categories/Hybird/"><div class='name'>Hybird</div><div class='badge'>(1)</div></a></li>
+        
+      </ul>
+    </div>
+  </section>
+
+
+            
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+            
+              
+  <section class='widget tagcloud'>
+    
+<header class='pure'>
+  <div><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;&nbsp;Hot Tags</div>
+  
+    <a class="rightBtn"
+    
+      rel="nofollow"
+    
+    
+    href="/tags/"
+    title="/tags/">
+    <i class="fas fa-expand-arrows-alt fa-fw"></i></a>
+  
+</header>
+
+    <div class='content pure'>
+      <a href="/tags/Category/" style="font-size: 14px; color: #999">Category</a> <a href="/tags/Hybird/" style="font-size: 14px; color: #999">Hybird</a> <a href="/tags/ReactiveCocoa/" style="font-size: 14px; color: #999">ReactiveCocoa</a> <a href="/tags/消息框架/" style="font-size: 14px; color: #999">消息框架</a>
+    </div>
+  </section>
+
+
+            
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+          
+          
+        
+      
+    
+
+  
+</aside>
+
+<footer id="footer" class="clearfix">
+  
+  
+  <br>
+  <div><p>Blog content follows the <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) License</a></p>
+</div>
+  <div>
+    Use
+    <a href="https://xaoxuu.com/wiki/material-x/" target="_blank" class="codename">Hexo</a>
+    as theme
+    
+      , 
+      total visits
+      <span id="busuanzi_value_site_pv"><i class="fas fa-spinner fa-spin fa-fw" aria-hidden="true"></i></span>
+      times
+    
+    . 
+  </div>
+</footer>
+<script>setLoadingBarProgress(80);</script>
+
+
+      <script>setLoadingBarProgress(60);</script>
+    </div>
+    <a class="s-top fas fa-arrow-up fa-fw" href='javascript:void(0)'></a>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+
+  <script>
+    var GOOGLE_CUSTOM_SEARCH_API_KEY = "";
+    var GOOGLE_CUSTOM_SEARCH_ENGINE_ID = "";
+    var ALGOLIA_API_KEY = "";
+    var ALGOLIA_APP_ID = "";
+    var ALGOLIA_INDEX_NAME = "";
+    var AZURE_SERVICE_NAME = "";
+    var AZURE_INDEX_NAME = "";
+    var AZURE_QUERY_KEY = "";
+    var BAIDU_API_ID = "";
+    var SEARCH_SERVICE = "hexo" || "hexo";
+    var ROOT = "/"||"/";
+    if(!ROOT.endsWith('/'))ROOT += '/';
+  </script>
+
+<script src="//instant.page/1.2.2" type="module" integrity="sha384-2xV8M5griQmzyiY3CDqh1dn4z3llDVqZDqzjzcY+jCBCk/a5fXJmuZ/40JJAPeoU"></script>
+
+
+  <script async src="https://cdn.jsdelivr.net/npm/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      const $reveal = $('.reveal');
+      if ($reveal.length === 0) return;
+      const sr = ScrollReveal({ distance: 0 });
+      sr.reveal('.reveal');
+    });
+  </script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/node-waves@0.7.6/dist/waves.min.js"></script>
+  <script type="text/javascript">
+    $(function() {
+      Waves.attach('.flat-btn', ['waves-button']);
+      Waves.attach('.float-btn', ['waves-button', 'waves-float']);
+      Waves.attach('.float-btn-light', ['waves-button', 'waves-float', 'waves-light']);
+      Waves.attach('.flat-box', ['waves-block']);
+      Waves.attach('.float-box', ['waves-block', 'waves-float']);
+      Waves.attach('.waves-image');
+      Waves.init();
+    });
+  </script>
+
+
+  <script async src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-busuanzi@2.3/js/busuanzi.pure.mini.js"></script>
+
+
+
+
+  
+  
+  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-backstretch/2.0.4/jquery.backstretch.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+        if ('.cover') {
+          $('.cover').backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        } else {
+          $.backstretch(
+          ["https://img.vim-cn.com/29/91197b04c13f512f734a76d4ac422d89dbe229.jpg"],
+          {
+            duration: "6000",
+            fade: "2500"
+          });
+        }
+      });
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/app.js"></script>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/xaoxuu/cdn-material-x@19.9/js/search.js"></script>
+
+
+
+
+<!-- 复制 -->
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  let COPY_SUCCESS = "Copied";
+  let COPY_FAILURE = "Copy failed";
+  /*页面载入完成后，创建复制按钮*/
+  !function (e, t, a) {
+    /* code */
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '  <i class="fa fa-copy"></i><span>Copy</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      clipboard.on('success', function(e) {
+        //您可以加入成功提示
+        console.info('Action:', e.action);
+        console.info('Text:', e.text);
+        console.info('Trigger:', e.trigger);
+        success_prompt(COPY_SUCCESS);
+        e.clearSelection();
+      });
+      clipboard.on('error', function(e) {
+        //您可以加入失败提示
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+        fail_prompt(COPY_FAILURE);
+      });
+    }
+    initCopyCode();
+
+  }(window, document);
+
+  /**
+   * 弹出式提示框，默认1.5秒自动消失
+   * @param message 提示信息
+   * @param style 提示样式，有alert-success、alert-danger、alert-warning、alert-info
+   * @param time 消失时间
+   */
+  var prompt = function (message, style, time)
+  {
+      style = (style === undefined) ? 'alert-success' : style;
+      time = (time === undefined) ? 1500 : time*1000;
+      $('<div>')
+          .appendTo('body')
+          .addClass('alert ' + style)
+          .html(message)
+          .show()
+          .delay(time)
+          .fadeOut();
+  };
+
+  // 成功提示
+  var success_prompt = function(message, time)
+  {
+      prompt(message, 'alert-success', time);
+  };
+
+  // 失败提示
+  var fail_prompt = function(message, time)
+  {
+      prompt(message, 'alert-danger', time);
+  };
+
+  // 提醒
+  var warning_prompt = function(message, time)
+  {
+      prompt(message, 'alert-warning', time);
+  };
+
+  // 信息提示
+  var info_prompt = function(message, time)
+  {
+      prompt(message, 'alert-info', time);
+  };
+
+</script>
+
+
+<!-- fancybox -->
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script>
+  let LAZY_LOAD_IMAGE = "";
+  $(".article-entry").find("fancybox").find("img").each(function () {
+      var element = document.createElement("a");
+      $(element).attr("data-fancybox", "gallery");
+      $(element).attr("href", $(this).attr("src"));
+      /* 图片采用懒加载处理时,
+       * 一般图片标签内会有个属性名来存放图片的真实地址，比如 data-original,
+       * 那么此处将原本的属性名src替换为对应属性名data-original,
+       * 修改如下
+       */
+       if (LAZY_LOAD_IMAGE) {
+         $(element).attr("href", $(this).attr("data-original"));
+       }
+      $(this).wrap(element);
+  });
+</script>
+
+
+
+
+
+  <script>setLoadingBarProgress(100);</script>
+</body>
+</html>
